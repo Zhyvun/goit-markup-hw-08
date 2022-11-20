@@ -1,0 +1,29 @@
+.soc-list__row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.soc-list__link {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--color-solid-other);
+  transition: color 250ms var(--timing-effect), background-color 250ms var(--timing-effect);
+}
+
+.soc-list__icon {
+  fill: currentColor;
+  width: 20px;
+  height: 20px;
+}
+
+.soc-list__link:hover,
+.soc-list__link:focus {
+  background-color: var(--color-current);
+  color: var(--color-bacground-basic);
+}

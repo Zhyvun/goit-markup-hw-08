@@ -1,0 +1,46 @@
+.hero {
+  padding: 200px 0px;
+  background-color: var(--color-brand);
+}
+
+.hero__picture {
+  max-width: 1600px;
+  min-height: 600px;
+  margin-right: auto;
+  margin-left: auto;
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/bodsec-01-herofon.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.hero__title {
+  width: 696px;
+  margin-top: 0;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--color-bacground-basic);
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.36;
+  letter-spacing: 0.06em;
+}
+
+.hero__button {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 10px 32px;
+  min-width: 216px;
+  transition: color 250ms var(--timing-effect), background-color 250ms var(--timing-effect),
+    box-shadow 250ms var(--timing-effect);
+}
+
+.hero__button:hover,
+.hero__utton:focus {
+  background-color: var(--color-current-active);
+}

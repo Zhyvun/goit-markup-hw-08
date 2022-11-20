@@ -1,0 +1,39 @@
+.team {
+  background-color: var(--color-bacground-body);
+}
+
+.team__list {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.team__list > li {
+  background-color: var(--color-bacground-basic);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+
+.team__row {
+  padding: 30px 0px 30px;
+}
+
+.team__person {
+  margin-bottom: 10px;
+  color: var(--color-basic);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+
+.team__function {
+  color: var(--color-minor);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  text-align: center;
+}

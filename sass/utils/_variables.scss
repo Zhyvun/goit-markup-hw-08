@@ -1,0 +1,38 @@
+:root {
+  --color-basic: #212121;
+  --color-minor: #757575;
+  --color-current: #2196f3;
+  --color-current-active: #188ce8;
+  --color-brand: #2f303a;
+  --color-solid: #eeeeee;
+  --color-solid-border: rgba(33, 33, 33, 0.2);
+  --color-solid-border-active: #2196f3;
+  --color-solid-other: #afb1b8;
+  --color-bacground-basic: #ffffff;
+  --color-bacground-minor: #f5f5f5;
+  --color-bacground-body: #f5f4fa;
+  --color-bacground-modal: rgba(0, 0, 0, 0.2);
+
+  --timing-effect: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section {
+  padding: 94px 0;
+}
+
+.section:nth-child(3) {
+  padding-top: 0;
+}
+
+/* Знімаємо стандартний стиль з посилань */
+.nondecoration {
+  text-decoration: none;
+  font-style: normal;
+}

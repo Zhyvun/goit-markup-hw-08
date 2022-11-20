@@ -1,0 +1,18 @@
+.logo {
+  display: block;
+  padding: 24px 0px;
+  text-decoration: none;
+  color: var(--color-current);
+  font-family: 'Raleway', sans-serif;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+}
+
+.logo--black {
+  color: #000000;
+}
+
+.logo--white {
+  color: var(--color-bacground-basic);
+}

@@ -1,0 +1,109 @@
+.portfolio {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 50px;
+}
+
+.portfolio__button {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.62;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+  background-color: var(--color-bacground-body);
+  border: none;
+  padding: 6px 22px;
+  border-radius: 4px;
+  transition: color 250ms var(--timing-effect), background-color 250ms var(--timing-effect),
+    box-shadow 250ms var(--timing-effect);
+}
+
+.portfolio__button:first-child {
+  padding: 6px 25px;
+}
+
+.portfolio__button:hover,
+.portfolio__button:focus {
+  color: var(--color-bacground-basic);
+  background-color: var(--color-current);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.portfolio-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.portfolio-list__elements {
+  width: calc((100% - 2 * 30px) / 3);
+}
+
+.portfolio-list__thumb {
+  position: relative;
+  overflow: hidden;
+}
+.portfolio-list__link {
+  text-decoration: none;
+  display: block;
+  transition: box-shadow 250ms var(--timing-effect);
+}
+
+.portfolio-list__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 150, 243, 0.9);
+  transform: translateY(100%);
+  transition: transform 250ms var(--timing-effect);
+}
+
+.portfolio-list__text {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.56;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: var(--color-bacground-basic);
+  padding: 63px 24px;
+}
+
+.portfolio-list__link:hover,
+.portfolio-list__link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.portfolio-list__link:hover .portfolio-list__overlay,
+.portfolio-list__link:focus .portfolio-list__overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.portfolio-list__caption {
+  padding: 20px 18px 20px 24px;
+  border: 1px solid var(--color-solid);
+  border-top: none;
+}
+
+.portfolio-list__name {
+  color: var(--color-basic);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+
+.portfolio-list__type {
+  color: var(--color-minor);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.03em;
+}
