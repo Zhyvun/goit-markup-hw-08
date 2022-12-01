@@ -6,8 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Студія</title>
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
@@ -17,42 +15,52 @@
 
 <body>
   <header class="header-page">
-    <div class="header-page__container container">
-      <a class="logo" href="./index.html">Web<span class="logo--black">Studio</span></a>
-      <nav>
-        <ul class="header-menu">
-          <li><a class="header-menu__item header-menu__item--current" href="./index.html">Студія</a></li>
-          <li><a class="header-menu__item" href="./portfolio.html">Портфоліо</a>
+    <div class="container">
+      <div class="header-page__container">
+        <nav class="header-nav">
+          <a class="logo" href="./index.html">Web<span class="logo--black">Studio</span></a>
+          <button class="menu-button js-open-menu" type="button" aria-expanded="false" aria-controls="mobile-menu">
+            <svg class="menu-button__icon" width="40" height="40" aria-label="перемикач мобільного меню">
+              <use href="./images/icons.svg#icon-menu"></use>
+            </svg>
+          </button>
+          <ul class="header-menu">
+            <li>
+              <a class="header-menu__item header-menu__item--current" href="./index.html">Студія</a>
+            </li>
+            <li><a class="header-menu__item" href="./portfolio.html">Портфоліо</a></li>
+            <li><a class="header-menu__item" href="#">Контакти</a></li>
+          </ul>
+        </nav>
+        <ul class="header-contacts">
+          <li>
+            <a class="header-contacts__link nondecoration" href="mailto:info@devstudio.com" lang="en">
+              <svg class="header-contacts__icon" width="16px" height="12px">
+                <use href="./images/icons.svg#icon-envelope"></use>
+              </svg>info@devstudio.com</a>
           </li>
-          <li><a class="header-menu__item" href="#">Контакти</a></li>
+          <li>
+            <a class="header-contacts__link nondecoration" href="tel:+380961111111"><svg class="header-contacts__icon"
+                width="10px" height="16px">
+                <use href="./images/icons.svg#icon-smartphone"></use>
+              </svg>+38 096 111 11 11</a>
+          </li>
         </ul>
-      </nav>
-      <ul class="header-contacts">
-        <li>
-          <a class="header-contacts__link nondecoration" href="mailto:info@devstudio.com" lang="en">
-            <svg class="header-contacts__icon" width="16px" height="12px">
-              <use href="./images/icons.svg#icon-envelope"></use>
-            </svg>info@devstudio.com</a>
-        </li>
-        <li>
-          <a class="header-contacts__link nondecoration" href="tel:+380961111111"><svg class="header-contacts__icon"
-              width="10px" height="16px">
-              <use href="./images/icons.svg#icon-smartphone"></use>
-            </svg>+38 096 111 11 11</a>
-        </li>
-      </ul>
+      </div>
     </div>
   </header>
   <main>
     <section class="hero hero__picture">
       <div class="container">
         <h1 class="hero__title">Ефективні рішення для вашого бізнесу</h1>
-        <button class="hero__button button" type="button" data-modal-open>Замовити послугу</button>
+        <button class="hero__button button" type="button" data-modal-open>
+          Замовити послугу
+        </button>
       </div>
     </section>
     <section class="section">
       <div class="container">
-        <h2 class="visually-hidden">Наші переваги</h2>
+        <h2 class="promo__title">Наші переваги</h2>
         <div class="promo__container">
           <ul class="promo">
             <li class="promo__list">
@@ -61,7 +69,7 @@
                   <use href="./images/icons.svg#icon-bodsec-01-antenna"></use>
                 </svg>
               </div>
-              <h3 class="promo__title">Увага до деталей</h3>
+              <h3 class="promo__subtitle">Увага до деталей</h3>
               <p class="promo__text">
                 Ідейні міркування, і навіть початок повсякденної роботи з формування позиції.
               </p>
@@ -72,7 +80,7 @@
                   <use href="./images/icons.svg#icon-bodsec-01-clock"></use>
                 </svg>
               </div>
-              <h3 class="promo__title">Пунктуальність</h3>
+              <h3 class="promo__subtitle">Пунктуальність</h3>
               <p class="promo__text">
                 Завдання організації, особливо рамки і місце навчання кадрів тягне у себе.
               </p>
@@ -83,7 +91,7 @@
                   <use href="./images/icons.svg#icon-bodsec-01-vector"></use>
                 </svg>
               </div>
-              <h3 class="promo__title">Планування</h3>
+              <h3 class="promo__subtitle">Планування</h3>
               <p class="promo__text">
                 Так само консультація з широким активом значною мірою зумовлює.
               </p>
@@ -94,7 +102,7 @@
                   <use href="./images/icons.svg#icon-bodsec-01-astronaut"></use>
                 </svg>
               </div>
-              <h3 class="promo__title">Сучасні технології</h3>
+              <h3 class="promo__subtitle">Сучасні технології</h3>
               <p class="promo__text">
                 Значимість цих проблем настільки очевидна, що реалізація планових завдань.
               </p>
@@ -103,25 +111,46 @@
         </div>
       </div>
     </section>
-    <section class="section">
+    <section class="activity section">
       <div class="container">
         <h2 class="title">Чим ми займаємося</h2>
         <ul class="activity__list">
           <li>
             <div class="activity__content">
-              <img src="./images/bodsec-01-0301.jpg" alt="Написання програмних модулів на клавіатурі" width="370" />
+              <picture>
+                <source srcset="./images/bodsec-01-1x-0301.webp 1x, ./images/bodsec-01-@2x-0301.webp 2x"
+                  type="image/webp" media="(min-width: 1200px)" />
+                <source srcset="./images/bodsec-01-1x-0301.jpg 1x, ./images/bodsec-01-@2x-0301.jpg 2x"
+                  media="(min-width: 1200px)" />
+                <img loading="lazy" src="./images/bodsec-01-1x-0301.jpg"
+                  alt="Написання програмних модулів на клавіатурі" sizes="(min-width: 1200px) 33vw" />
+              </picture>
               <p class="activity__label">Десктопні додатки</p>
             </div>
           </li>
           <li>
             <div class="activity__content">
-              <img src="./images/bodsec-01-0302.jpg" alt="Створення контенту для мобільних гаджетів" width="370" />
+              <picture>
+                <source srcset="./images/bodsec-01-1x-0302.webp 1x, ./images/bodsec-01-@2x-0302.webp 2x"
+                  type="image/webp" media="(min-width: 1200px)" />
+                <source srcset="./images/bodsec-01-1x-0302.jpg 1x, ./images/bodsec-01-@2x-0302.jpg 2x"
+                  media="(min-width: 1200px)" />
+                <img loading="lazy" src="./images/bodsec-01-1x-0302.jpg" alt="Створення контенту для мобільних гаджетів"
+                  sizes="(min-width: 1200px) 33vw" />
+              </picture>
               <p class="activity__label">Мобільні додатки</p>
             </div>
           </li>
           <li>
             <div class="activity__content">
-              <img src="./images/bodsec-01-0303.jpg" alt="Розробка дизайну за допомогою планшету" width="370" />
+              <picture>
+                <source srcset="./images/bodsec-01-1x-0303.webp 1x, ./images/bodsec-01-@2x-0303.webp 2x"
+                  type="image/webp" media="(min-width: 1200px)" />
+                <source srcset="./images/bodsec-01-1x-0303.jpg 1x, ./images/bodsec-01-@2x-0303.jpg 2x"
+                  media="(min-width: 1200px)" />
+                <img loading="lazy" src="./images/bodsec-01-1x-0303.jpg" alt="Розробка дизайну за допомогою планшету"
+                  sizes="(min-width: 1200px) 33vw" />
+              </picture>
               <p class="activity__label">Дизайнерські рішення</p>
             </div>
           </li>
@@ -132,9 +161,32 @@
       <div class="container">
         <h2 class="title">Наша команда</h2>
         <ul class="team__list">
-          <li>
-            <img src="./images/bodsec-01-0401.jpg"
-              alt="Дизайнер продукту, усміхнений чоловік в окулярах, чимось схожий на Гарі Потера" width="260" />
+          <li class="team__item">
+            <picture>
+              <source srcset="
+                    ./images/bodsec-01-1x-0401_mob.webp  1x,
+                    ./images/bodsec-01-@2x-0401_mob.webp 2x
+                  " type="image/webp" media="(max-width: 767px)" />
+              <source srcset="
+                    ./images/bodsec-01-1x-0401_tab.webp  1x,
+                    ./images/bodsec-01-@2x-0401_tab.webp 2x
+                  " type="image/webp" media="(max-width: 1199px)" />
+              <source srcset="./images/bodsec-01-1x-0401.webp 1x, ./images/bodsec-01-@2x-0401.webp 2x" type="image/webp"
+                media="(min-width: 1200px)" />
+              <source srcset="
+                    ./images/bodsec-01-1x-0401_mob.jpg  1x,
+                    ./images/bodsec-01-@2x-0401_mob.jpg 2x
+                  " media="(max-width: 767px)" />
+              <source srcset="
+                    ./images/bodsec-01-1x-0401_tab.jpg  1x,
+                    ./images/bodsec-01-@2x-0401_tab.jpg 2x
+                  " media="(max-width: 1199px)" />
+              <source srcset="./images/bodsec-01-1x-0401.jpg 1x, ./images/bodsec-01-@2x-0401.jpg 2x"
+                media="(min-width: 1200px)" />
+              <img loading="lazy" src="./images/bodsec-01-1x-0401.jpg"
+                alt="Дизайнер продукту, усміхнений чоловік в окулярах, чимось схожий на Гарі Потера"
+                sizes="(min-width: 1200px) 25vw, (min-width: 768px) 50vw, 100vw" />
+            </picture>
             <div class="team__row">
               <h3 class="team__person">Ігор Дем'яненко</h3>
               <p class="team__function" lang="en">Product Designer</p>
@@ -149,7 +201,7 @@
                 <li class="soc-list__item">
                   <a href="" class="soc-list__link">
                     <svg class="soc-list__icon">
-                      <use href="./images/icons.svg#icon-twitter"></use>
+                      <use href="./images/icons.svg#icon-instagram"></use>
                     </svg>
                   </a>
                 </li>
@@ -163,16 +215,39 @@
                 <li class="soc-list__item">
                   <a href="" class="soc-list__link">
                     <svg class="soc-list__icon">
-                      <use href="./images/icons.svg#icon-linkedin"></use>
+                      <use href="./images/icons.svg#icon-twitter"></use>
                     </svg>
                   </a>
                 </li>
               </ul>
             </div>
           </li>
-          <li>
-            <img src="./images/bodsec-01-0402.jpg" alt="Розробник інтерфейсу, білява жінка, що стоїть у закритій позі"
-              width="260" />
+          <li class="team__item">
+            <picture>
+              <source srcset="
+                    ./images/bodsec-01-1x-0402_mob.webp  1x,
+                    ./images/bodsec-01-@2x-0402_mob.webp 2x
+                  " type="image/webp" media="(max-width: 767px)" />
+              <source srcset="
+                    ./images/bodsec-01-1x-0402_tab.webp  1x,
+                    ./images/bodsec-01-@2x-0402_tab.webp 2x
+                  " type="image/webp" media="(max-width: 1199px)" />
+              <source srcset="./images/bodsec-01-1x-0402.webp 1x, ./images/bodsec-01-@2x-0402.webp 2x" type="image/webp"
+                media="(min-width: 1200px)" />
+              <source srcset="
+                    ./images/bodsec-01-1x-0402_mob.jpg  1x,
+                    ./images/bodsec-01-@2x-0402_mob.jpg 2x
+                  " media="(max-width: 767px)" />
+              <source srcset="
+                    ./images/bodsec-01-1x-0402_tab.jpg  1x,
+                    ./images/bodsec-01-@2x-0402_tab.jpg 2x
+                  " media="(max-width: 1199px)" />
+              <source srcset="./images/bodsec-01-1x-0402.jpg 1x, ./images/bodsec-01-@2x-0402.jpg 2x"
+                media="(min-width: 1200px)" />
+              <img loading="lazy" src="./images/bodsec-01-1x-0402.jpg"
+                alt="Розробник інтерфейсу, білява жінка, що стоїть у закритій позі"
+                sizes="(min-width: 1200px) 25vw, (min-width: 768px) 50vw, 100vw" />
+            </picture>
             <div class="team__row">
               <h3 class="team__person">Ольга Рєпіна</h3>
               <p class="team__function" lang="en">Frontend Developer</p>
@@ -208,9 +283,32 @@
               </ul>
             </div>
           </li>
-          <li>
-            <img src="./images/bodsec-01-0403.jpg" alt="Маркетолог, усміхнений чоловік, який дивиться в далечину"
-              width="260" />
+          <li class="team__item">
+            <picture>
+              <source srcset="
+                    ./images/bodsec-01-1x-0403_mob.webp  1x,
+                    ./images/bodsec-01-@2x-0403_mob.webp 2x
+                  " type="image/webp" media="(max-width: 767px)" />
+              <source srcset="
+                    ./images/bodsec-01-1x-0403_tab.webp  1x,
+                    ./images/bodsec-01-@2x-0403_tab.webp 2x
+                  " type="image/webp" media="(max-width: 1199px)" />
+              <source srcset="./images/bodsec-01-1x-0403.webp 1x, ./images/bodsec-01-@2x-0403.webp 2x" type="image/webp"
+                media="(min-width: 1200px)" />
+              <source srcset="
+                    ./images/bodsec-01-1x-0403_mob.jpg  1x,
+                    ./images/bodsec-01-@2x-0403_mob.jpg 2x
+                  " media="(max-width: 767px)" />
+              <source srcset="
+                    ./images/bodsec-01-1x-0403_tab.jpg  1x,
+                    ./images/bodsec-01-@2x-0403_tab.jpg 2x
+                  " media="(max-width: 1199px)" />
+              <source srcset="./images/bodsec-01-1x-0403.jpg 1x, ./images/bodsec-01-@2x-0403.jpg 2x"
+                media="(min-width: 1200px)" />
+              <img loading="lazy" src="./images/bodsec-01-1x-0403.jpg"
+                alt="Маркетолог, усміхнений чоловік, який дивиться в далечину"
+                sizes="(min-width: 1200px) 25vw, (min-width: 768px) 50vw, 100vw" />
+            </picture>
             <div class="team__row">
               <h3 class="team__person">Микола Тарасов</h3>
               <p class="team__function" lang="en">Marketing</p>
@@ -246,10 +344,32 @@
               </ul>
             </div>
           </li>
-          <li>
-            <img src="./images/bodsec-01-0404.jpg"
-              alt="Дизайнер інтерфейсу користувача, чоловік з хитрою посмішкою, мабуть замислив якусь чергову фічу"
-              width="260" />
+          <li class="team__item">
+            <picture>
+              <source srcset="
+                    ./images/bodsec-01-1x-0404_mob.webp  1x,
+                    ./images/bodsec-01-@2x-0404_mob.webp 2x
+                  " type="image/webp" media="(max-width: 767px)" />
+              <source srcset="
+                    ./images/bodsec-01-1x-0404_tab.webp  1x,
+                    ./images/bodsec-01-@2x-0404_tab.webp 2x
+                  " type="image/webp" media="(max-width: 1199px)" />
+              <source srcset="./images/bodsec-01-1x-0404.webp 1x, ./images/bodsec-01-@2x-0404.webp 2x" type="image/webp"
+                media="(min-width: 1200px)" />
+              <source srcset="
+                    ./images/bodsec-01-1x-0404_mob.jpg  1x,
+                    ./images/bodsec-01-@2x-0404_mob.jpg 2x
+                  " media="(max-width: 767px)" />
+              <source srcset="
+                    ./images/bodsec-01-1x-0404_tab.jpg  1x,
+                    ./images/bodsec-01-@2x-0404_tab.jpg 2x
+                  " media="(max-width: 1199px)" />
+              <source srcset="./images/bodsec-01-1x-0404.jpg 1x, ./images/bodsec-01-@2x-0404.jpg 2x"
+                media="(min-width: 1200px)" />
+              <img loading="lazy" src="./images/bodsec-01-1x-0404.jpg"
+                alt="Дизайнер інтерфейсу користувача, чоловік з хитрою посмішкою, мабуть замислив якусь чергову фічу"
+                sizes="(min-width: 1200px) 25vw, (min-width: 768px) 50vw, 100vw" />
+            </picture>
             <div class="team__row">
               <h3 class="team__person">Михайло Єрмаков</h3>
               <p class="team__function" lang="en">UI Designer</p>
@@ -291,7 +411,7 @@
     <section class="section clients">
       <div class="container">
         <h2 class="title">Постійні клієнти</h2>
-        <ul class="clients">
+        <ul class="clients__list">
           <li class="clients__item">
             <a href="" class="clients__link">
               <svg class="clients__icon" width="41px" height="47px">
@@ -342,80 +462,122 @@
     <div class="container">
       <div class="footer__row">
         <div class="footer__contacts">
-          <a class="footer__logo logo" lang="en" href="./index.html">Web<span class="logo--white">Studio</span></a>
-          <address class="contacts">
-            <ul class="contacts__list">
-              <li class="contacts__item">
-                <a class="contacts__unit contacts__unit--white nondecoration"
-                  href="https://goo.gl/maps/6D874UoQJgZWC2zg7" target="_blank" rel="noopener noreferrer nofollow">м.
-                  Київ, пр-т Лесі Українки,
-                  26</a>
+          <div class="footer__wrap">
+            <a class="footer__logo logo" lang="en" href="./index.html">Web<span class="logo--white">Studio</span></a>
+            <address class="contacts">
+              <ul class="contacts__list">
+                <li class="contacts__item">
+                  <a class="contacts__unit contacts__unit--white nondecoration"
+                    href="https://goo.gl/maps/6D874UoQJgZWC2zg7" target="_blank" rel="noopener noreferrer nofollow">м.
+                    Київ, пр-т Лесі Українки, 26</a>
+                </li>
+                <li class="contacts__item">
+                  <a class="contacts__unit nondecoration" href="mailto:info@devstudio.com"
+                    lang="en">info@devstudio.com</a>
+                </li>
+                <li class="contacts__item">
+                  <a class="contacts__unit nondecoration" href="tel:+380961111111">+38 096 111 11 11</a>
+                </li>
+              </ul>
+            </address>
+          </div>
+          <div class="footer__soc">
+            <p class="footer__title">приєднуйтесь</p>
+            <ul class="soc-list__row">
+              <li class="soc-list__item">
+                <a href="" class="soc-list__link">
+                  <svg class="soc-list__icon">
+                    <use href="./images/icons.svg#icon-instagram"></use>
+                  </svg>
+                </a>
               </li>
-              <li class="contacts__item">
-                <a class="contacts__unit nondecoration" href="mailto:info@devstudio.com"
-                  lang="en">info@devstudio.com</a>
+              <li class="soc-list__item">
+                <a href="" class="soc-list__link">
+                  <svg class="soc-list__icon">
+                    <use href="./images/icons.svg#icon-twitter"></use>
+                  </svg>
+                </a>
               </li>
-              <li class="contacts__item">
-                <a class="contacts__unit nondecoration" href="tel:+380961111111">+38 096 111 11 11</a>
+              <li class="soc-list__item">
+                <a href="" class="soc-list__link">
+                  <svg class="soc-list__icon">
+                    <use href="./images/icons.svg#icon-facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="soc-list__item">
+                <a href="" class="soc-list__link">
+                  <svg class="soc-list__icon">
+                    <use href="./images/icons.svg#icon-linkedin"></use>
+                  </svg>
+                </a>
               </li>
             </ul>
-          </address>
+          </div>
         </div>
-        <div class="footer__soc">
-          <p class="footer__title">приєднуйтесь</p>
-          <ul class="soc-list__row">
-            <li class="soc-list__item">
-              <a href="" class="soc-list__link">
-                <svg class="soc-list__icon">
-                  <use href="./images/icons.svg#icon-instagram"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="soc-list__item">
-              <a href="" class="soc-list__link">
-                <svg class="soc-list__icon">
-                  <use href="./images/icons.svg#icon-twitter"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="soc-list__item">
-              <a href="" class="soc-list__link">
-                <svg class="soc-list__icon">
-                  <use href="./images/icons.svg#icon-facebook"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="soc-list__item">
-              <a href="" class="soc-list__link">
-                <svg class="soc-list__icon">
-                  <use href="./images/icons.svg#icon-linkedin"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="footer__mailing">
-          <p class="footer__title footer__title--mailing">Підпишіться на розсилку</p>
-          <form class="mailing__form" autocomplete="on" action="#" method="post">
+        <form class="footer__form" name="subscription" autocomplete="on" action="#" method="post">
+          <div class="footer__mailing">
+            <p class="footer__title footer__title--mailing">Підпишіться на розсилку</p>
             <input id="input-email" class="mailing__input" type="email" name="input-email"
-              aria-describedby="input-email" placeholder="E-mail" required>
-            <button class="mailing__button button" type="submit" aria-label="Підписатися">
-              Підписатися
-              <svg class="mailing__icon" width="24" height="24">
-                <use href="./images/icons.svg#icon-send"></use>
-              </svg>
-            </button>
-          </form>
-        </div>
+              aria-describedby="input-email" placeholder="E-mail" required />
+          </div>
+          <button class="footer__button button" type="submit" aria-label="Підписатися">
+            Підписатися
+            <svg class="mailing__icon" width="24" height="24">
+              <use href="./images/icons.svg#icon-send"></use>
+            </svg>
+          </button>
+        </form>
       </div>
     </div>
   </footer>
+
+  <!-- MOBILE MENU -->
+  <div class="container">
+    <div class="menu-container js-menu-container" id="mobile-menu">
+      <div class="mobile-container__wrap mobile-menu">
+        <button class="menu-button js-close-menu" type="button">
+          <svg class="menu-button__icon" width="40" height="40" aria-label="перемикач мобільного меню">
+            <use href="./images/icons.svg#icon-close_menu"></use>
+          </svg>
+        </button>
+        <nav class="mobile-menu__nav">
+          <ul class="mobile-menu__list">
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="./index.html">Студія</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="./portfolio.html">Портфоліо</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="#">Контакти</a>
+            </li>
+          </ul>
+        </nav>
+        <ul class="mobile-menu__contact">
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__contact-link" href="tel:+380961111111"> +38 096 111 11 11</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__contact-link" href="mailto:info@devstudio.com">
+              info@devstudio.com</a>
+          </li>
+        </ul>
+        <a class="mobile-menu__social" href="#">Instagram <span>&#10072;</span></a>
+        <a class="mobile-menu__social" href="#">Twitter <span>&#10072;</span></a>
+        <a class="mobile-menu__social" href="#">Facebook <span>&#10072;</span></a>
+        <a class="mobile-menu__social" href="#">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+
   <!--MODAL WINDOW-->
   <div class="backdrop is-hidden" data-modal>
     <div class="modal">
       <button class="modal-button__close" type="button" data-modal-close>
         <svg width="11px" height="11px">
-          <use href="./images/icons.svg#icon-cross"></use>heading
+          <use href="./images/icons.svg#icon-cross"></use>
+          heading
         </svg>
       </button>
       <p class="modal__heading">Залиште свої дані, ми вам передзвонимо</p>
@@ -423,7 +585,7 @@
         <label class="modal-box__label" for="person-name">Ім'я</label>
         <div class="modal-box">
           <input id="person-name" class="modal-box__input" type="text" name="person-name" placeholder=" "
-            autocomplete="on" required>
+            autocomplete="on" required />
           <svg class="modal-box__icon" width="12px" height="12px">
             <use href="./images/icons.svg#icon-person"></use>
           </svg>
@@ -432,7 +594,7 @@
         <label class="modal-box__label" for="person-phone">Телефон</label>
         <div class="modal-box">
           <input id="person-phone" class="modal-box__input" type="tel" name="person-phone" placeholder=" "
-            autocomplete="on" required>
+            autocomplete="on" required />
           <svg class="modal-box__icon" width="12px" height="12px">
             <use href="./images/icons.svg#icon-phone"></use>
           </svg>
@@ -441,7 +603,7 @@
         <label class="modal-box__label" for="person-email">Пошта</label>
         <div class="modal-box">
           <input id="person-email" class="modal-box__input" type="email" name="person-email" placeholder=" "
-            autocomplete="on" required>
+            autocomplete="on" required />
           <svg class="modal-box__icon" width="12px" height="12px">
             <use href="./images/icons.svg#icon-email"></use>
           </svg>
@@ -453,18 +615,19 @@
         <div class="modal-checkbox">
           <label class="modal-checkbox__label" for="agreement-checkbox">
             <input class="modal-checkbox__input visually-hidden" id="agreement-checkbox" type="checkbox"
-              name="agreement-checkbox">
+              name="agreement-checkbox" />
             <svg class="modal-checkbox__icon" width="11px" height="8px">
               <use href="./images/icons.svg#icon-check"></use>
             </svg>
-            Погоджуюся з розсилкою та приймаю <a class="modal-checkbox__terms" href="#"> Умови
-              договору</a>
+            Погоджуюся з розсилкою та приймаю
+            <a class="modal-checkbox__terms" href="#"> Умови договору</a>
           </label>
         </div>
         <button class="modal-button__send button" type="submit">Відправити</button>
       </form>
     </div>
   </div>
+  <script src="./js/mobile-menu.js"></script>
   <script src="./js/modal.js"></script>
 </body>
 

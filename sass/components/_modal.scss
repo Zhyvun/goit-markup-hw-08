@@ -3,10 +3,16 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 528px;
-  height: 581px;
   padding: 40px;
   background-color: var(--color-bacground-basic);
+
+  width: 450px;
+  height: 609px;
+
+  @media screen and (min-width: 1200px) {
+    width: 528px;
+    height: 581px;
+  }
 }
 
 .modal__heading {
@@ -129,30 +135,35 @@
 }
 
 .modal-checkbox__label {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center;
+  column-gap: 8px;
+
   font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71;
+  font-size: 12px;
+  line-height: 1.16;
   color: var(--color-minor);
+
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+    line-height: 1.71;
+  }
 }
 
 .modal-checkbox__icon {
-  display: block;
+  display: inline-block;
   width: 16px;
   height: 15px;
   margin-right: 7px;
   border: solid 2px var(--color-basic);
   border-radius: 3px;
   fill: var(--color-bacground-basic);
-  transition: border 250ms var(--timing-effect);
-  transition: fill 250ms var(--timing-effect);
-}
+  transition: border $timing-function $cubic-hover;
+  transition: fill $timing-function $cubic-hover;
 
-.modal-checkbox__input:checked + .modal-checkbox__icon {
-  border: none;
-  background-color: var(--color-current);
+  .modal-checkbox__input:checked + & {
+    border: none;
+    background-color: var(--color-current);
+  }
 }
 
 .modal-checkbox__terms {

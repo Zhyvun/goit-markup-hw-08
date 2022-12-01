@@ -1,6 +1,7 @@
+@import './utils/normalize';
 @import './utils/variables.scss';
 @import './utils/base';
-@import './utils/plagin';
+@import './utils/mixins';
 
 @import './components/activity';
 @import './components/button';
@@ -10,6 +11,7 @@
 @import './components/logo';
 @import './components/footer';
 @import './components/modal';
+@import './components/mobile-menu';
 @import './components/portfolio';
 @import './components/promo';
 @import './components/soc-list';

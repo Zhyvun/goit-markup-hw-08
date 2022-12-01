@@ -26,3 +26,7 @@ body {
   color: var(--color-minor);
   background-color: var(--color-bacground-basic);
 }
+
+$cubic-hover: cubic-bezier(0.4, 0, 0.2, 1);
+
+$timing-function: 250ms;

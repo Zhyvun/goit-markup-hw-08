@@ -1,27 +1,138 @@
 .footer {
   padding: 60px 0px;
   background-color: var(--color-brand);
+
+  &__row {
+    @media screen and (min-width: 1200px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+  }
+
+  &__contacts {
+    margin-bottom: 60px;
+
+    @media screen and (min-width: 768px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    @media screen and (min-width: 1200px) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__wrap {
+    @media screen and (min-width: 1200px) {
+      margin-right: 94px;
+    }
+  }
+
+  &__logo {
+    display: block;
+    margin-bottom: 28px;
+    text-align: center;
+
+    @media screen and (min-width: 1200px) {
+      margin-bottom: 20px;
+      text-align: start;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--color-bacground-basic);
+    margin-bottom: 20px;
+    text-align: center;
+
+    @media screen and (min-width: 1200px) {
+      margin-bottom: 20px;
+      text-align: start;
+    }
+  }
+
+  &__form {
+    text-align: center;
+
+    @media screen and (min-width: 1200px) {
+      display: flex;
+      justify-content: end;
+      align-items: flex-end;
+    }
+  }
+
+  &__mailing {
+    margin-bottom: 20px;
+
+    @media screen and (min-width: 1200px) {
+      display: flex;
+      flex-direction: column;
+      margin-right: 12px;
+      margin-bottom: 0;
+    }
+
+    &__input {
+      display: block;
+      padding-left: 16px;
+      margin-top: 20px;
+      width: 100%;
+      height: 50px;
+      background-color: var(--dark-bgr-color);
+      border-radius: 4px;
+      border-color: var(--footer-border-input);
+
+      @media screen and (min-width: 768px) {
+        @include margin-center();
+        width: 450px;
+      }
+
+      @media screen and (min-width: 1200px) {
+        margin: 0;
+        margin-top: 0;
+        width: 358px;
+      }
+    }
+  }
+
+  &__button {
+    @include margin-center();
+    @include flex-center();
+    width: 200px;
+    height: 50px;
+
+    transition: background-color $timing-function $cubic-hover;
+
+    @media screen and (min-width: 1200px) {
+      margin: 0;
+    }
+  }
 }
 
-.footer__logo {
-  padding: 0px 0px;
-  margin-bottom: 20px;
+.contacts__list {
+  margin-bottom: 60px;
+  text-align: center;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    text-align: start;
+  }
 }
 
-.footer__row {
-  display: flex;
-  gap: 93px;
-  align-items: baseline;
-}
+.contacts__item:not(:last-child) {
+  margin-bottom: 12px;
 
-.footer__title {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: var(--color-bacground-basic);
-  margin-bottom: 20px;
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 12px;
+  }
 }
 
 .footer__soc .soc-list__link {
@@ -37,11 +148,6 @@
   fill: var(--color-bacground-basic);
 }
 
-// .footer__soc .soc-list__link:hover,
-// .footer__soc .soc-list__link:focus {
-//   background-color: var(--color-current);
-// }
-
 .contacts__unit {
   display: block;
   color: rgba(255, 255, 255, 0.6);
@@ -54,14 +160,6 @@
   color: var(--color-bacground-basic);
 }
 
-.contacts__item:not(:last-child) {
-  margin-bottom: 9px;
-}
-
-.mailing__form {
-  display: flex;
-}
-
 .mailing__input {
   padding: 15px;
   width: 358px;
@@ -70,26 +168,6 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
-}
-
-.mailing__button {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 12px;
-  width: 200px;
-  height: 50px;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.88;
-  letter-spacing: 0.06em;
-  color: var(--color-bacground-basic);
-  background-color: var(--color-current);
-  box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 250ms var(--timing-effect);
 }
 
 .mailing__icon {

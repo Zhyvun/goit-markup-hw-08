@@ -5,6 +5,10 @@
   margin-bottom: 50px;
 }
 
+.portfolio__title {
+  @include visually-hidden;
+}
+
 .portfolio__button {
   cursor: pointer;
   font-family: inherit;
