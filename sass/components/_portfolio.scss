@@ -20,8 +20,8 @@
   border: none;
   padding: 6px 22px;
   border-radius: 4px;
-  transition: color 250ms var(--timing-effect), background-color 250ms var(--timing-effect),
-    box-shadow 250ms var(--timing-effect);
+  transition: color $timing-function $cubic-hover, background-color $timing-function $cubic-hover,
+    box-shadow $timing-function $cubic-hover;
 }
 
 .portfolio__button:first-child {
@@ -54,7 +54,7 @@
 .portfolio-list__link {
   text-decoration: none;
   display: block;
-  transition: box-shadow 250ms var(--timing-effect);
+  transition: box-shadow $timing-function $cubic-hover;
 }
 
 .portfolio-list__overlay {
@@ -65,7 +65,7 @@
   height: 100%;
   background-color: rgba(33, 150, 243, 0.9);
   transform: translateY(100%);
-  transition: transform 250ms var(--timing-effect);
+  transition: transform $timing-function $cubic-hover;
 }
 
 .portfolio-list__text {

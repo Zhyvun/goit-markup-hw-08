@@ -555,8 +555,8 @@ body {
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  -webkit-transition: color 250ms var(--timing-effect);
-  transition: color 250ms var(--timing-effect);
+  -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-menu__item--current {
   position: relative;
@@ -721,10 +721,10 @@ body {
   margin-right: auto;
   margin-left: auto;
   padding: 10px 32px;
-  -webkit-transition: color 250ms var(--timing-effect), background-color 250ms var(--timing-effect), -webkit-box-shadow 250ms var(--timing-effect);
-  transition: color 250ms var(--timing-effect), background-color 250ms var(--timing-effect), -webkit-box-shadow 250ms var(--timing-effect);
-  transition: color 250ms var(--timing-effect), background-color 250ms var(--timing-effect), box-shadow 250ms var(--timing-effect);
-  transition: color 250ms var(--timing-effect), background-color 250ms var(--timing-effect), box-shadow 250ms var(--timing-effect), -webkit-box-shadow 250ms var(--timing-effect);
+  -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 @media screen and (min-width: 1200px) {
   .hero__button {
@@ -925,8 +925,8 @@ body {
 
 .footer__soc .soc-list__link {
   background-color: rgba(255, 255, 255, 0.1);
-  -webkit-transition: background-color 250ms var(--timing-effect);
-  transition: background-color 250ms var(--timing-effect);
+  -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer__soc .soc-list__linkhover, .footer__soc .soc-list__linkfocus {
   background-color: var(--color-current);
@@ -964,34 +964,6 @@ body {
   margin-left: 10px;
 }
 
-.modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  padding: 40px;
-  background-color: var(--color-bacground-basic);
-  width: 450px;
-  height: 609px;
-}
-@media screen and (min-width: 1200px) {
-  .modal {
-    width: 528px;
-    height: 581px;
-  }
-}
-
-.modal__heading {
-  margin-bottom: 12px;
-  text-align: center;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 1.22;
-  letter-spacing: 0.03em;
-  color: var(--color-basic);
-}
-
 .backdrop {
   position: fixed;
   top: 0;
@@ -1004,10 +976,47 @@ body {
   transition: opacity 250ms, visibility 250ms;
 }
 
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scaleY(1) rotate(0);
+          transform: translate(-50%, -50%) scaleY(1) rotate(0);
+  padding: 40px;
+  background-color: var(--color-bacground-basic);
+  -webkit-transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: 450px;
+  height: 609px;
+}
+@media screen and (min-width: 1200px) {
+  .modal {
+    width: 528px;
+    height: 581px;
+  }
+}
+
 .is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  -webkit-transform: translate(-50%, -50%) scale(0) rotate(-180deg);
+          transform: translate(-50%, -50%) scale(0) rotate(-180deg);
+}
+
+.modal__heading {
+  margin-bottom: 12px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.22;
+  letter-spacing: 0.03em;
+  color: var(--color-basic);
 }
 
 .modal-button__close {
@@ -1031,9 +1040,7 @@ body {
   background-color: var(--color-bacground-basic);
   cursor: pointer;
 }
-
-.modal-button__close:focus,
-.modal-button__close:hover {
+.modal-button__close:focus, .modal-button__close:hover {
   fill: var(--color-current);
 }
 
@@ -1041,7 +1048,6 @@ body {
   position: relative;
   margin-bottom: 10px;
 }
-
 .modal-box__label {
   display: block;
   margin-bottom: 4px;
@@ -1050,7 +1056,6 @@ body {
   line-height: 1.17;
   letter-spacing: 0.01em;
 }
-
 .modal-box__input {
   width: 100%;
   padding: 14px 14px 14px 32px;
@@ -1059,10 +1064,20 @@ body {
     0px 2px 1px rgba(0, 0, 0, 0.2); */
   border-radius: 4px;
   outline: none;
-  -webkit-transition: border 250ms var(--timing-effect);
-  transition: border 250ms var(--timing-effect);
+  -webkit-transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* Шось не пішов у мене цей код не працює focus-within */
+  /* .form-box:focus-within .form-icon,
+  .form-box:focus-within .form-icon {
+    fill: var(--color-solid-border-active);
+  } */
 }
-
+.modal-box__input:hover, .modal-box__input:focus {
+  border-color: var(--color-solid-border-active);
+}
+.modal-box__input:hover + .modal-box__icon, .modal-box__input:focus + .modal-box__icon {
+  fill: var(--color-solid-border-active);
+}
 .modal-box__icon {
   position: absolute;
   left: 15px;
@@ -1071,25 +1086,9 @@ body {
           transform: translateY(-50%);
   /* fill: currentColor; */
   fill: var(--color-basic);
-  -webkit-transition: fill 250ms var(--timing-effect);
-  transition: fill 250ms var(--timing-effect);
+  -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.modal-box__input:hover,
-.modal-box__input:focus {
-  border-color: var(--color-solid-border-active);
-}
-
-/* Шось не пішов у мене цей код не працює focus-within */
-/* .form-box:focus-within .form-icon,
-.form-box:focus-within .form-icon {
-  fill: var(--color-solid-border-active);
-} */
-.modal-box__input:hover + .modal-box__icon,
-.modal-box__input:focus + .modal-box__icon {
-  fill: var(--color-solid-border-active);
-}
-
 .modal-box__textarea {
   display: block;
   width: 100%;
@@ -1098,12 +1097,12 @@ body {
   border: 1px solid var(--color-solid-border);
   border-radius: 4px;
   outline: none;
-  -webkit-transition: border 250ms var(--timing-effect);
-  transition: border 250ms var(--timing-effect);
+  -webkit-transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  resize: vertical;
+  max-height: 200px;
 }
-
-.modal-box__textarea:hover,
-.modal-box__textarea:focus {
+.modal-box__textarea:hover, .modal-box__textarea:focus {
   border-color: var(--color-solid-border-active);
 }
 
@@ -1111,7 +1110,6 @@ body {
   margin-top: 20px;
   margin-bottom: 30px;
 }
-
 .modal-checkbox__label {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1129,6 +1127,7 @@ body {
   font-size: 12px;
   line-height: 1.16;
   color: var(--color-minor);
+  cursor: pointer;
 }
 @media screen and (min-width: 1200px) {
   .modal-checkbox__label {
@@ -1136,7 +1135,6 @@ body {
     line-height: 1.71;
   }
 }
-
 .modal-checkbox__icon {
   display: inline-block;
   width: 16px;
@@ -1154,7 +1152,6 @@ body {
   border: none;
   background-color: var(--color-current);
 }
-
 .modal-checkbox__terms {
   display: inline-block;
   margin-left: 10px;
@@ -1176,12 +1173,10 @@ body {
   height: 50px;
   margin-left: auto;
   margin-right: auto;
-  -webkit-transition: background-color 250ms var(--timing-effect);
-  transition: background-color 250ms var(--timing-effect);
+  -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.modal-button__send:focus,
-.modal-button__send:hover {
+.modal-button__send:focus, .modal-button__send:hover {
   background-color: var(--color-current-active);
 }
 
@@ -1357,10 +1352,10 @@ body {
   border: none;
   padding: 6px 22px;
   border-radius: 4px;
-  -webkit-transition: color 250ms var(--timing-effect), background-color 250ms var(--timing-effect), -webkit-box-shadow 250ms var(--timing-effect);
-  transition: color 250ms var(--timing-effect), background-color 250ms var(--timing-effect), -webkit-box-shadow 250ms var(--timing-effect);
-  transition: color 250ms var(--timing-effect), background-color 250ms var(--timing-effect), box-shadow 250ms var(--timing-effect);
-  transition: color 250ms var(--timing-effect), background-color 250ms var(--timing-effect), box-shadow 250ms var(--timing-effect), -webkit-box-shadow 250ms var(--timing-effect);
+  -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio__button:first-child {
@@ -1399,10 +1394,10 @@ body {
 .portfolio-list__link {
   text-decoration: none;
   display: block;
-  -webkit-transition: -webkit-box-shadow 250ms var(--timing-effect);
-  transition: -webkit-box-shadow 250ms var(--timing-effect);
-  transition: box-shadow 250ms var(--timing-effect);
-  transition: box-shadow 250ms var(--timing-effect), -webkit-box-shadow 250ms var(--timing-effect);
+  -webkit-transition: -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-list__overlay {
@@ -1414,10 +1409,10 @@ body {
   background-color: rgba(33, 150, 243, 0.9);
   -webkit-transform: translateY(100%);
           transform: translateY(100%);
-  -webkit-transition: -webkit-transform 250ms var(--timing-effect);
-  transition: -webkit-transform 250ms var(--timing-effect);
-  transition: transform 250ms var(--timing-effect);
-  transition: transform 250ms var(--timing-effect), -webkit-transform 250ms var(--timing-effect);
+  -webkit-transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-list__text {
@@ -1579,8 +1574,8 @@ body {
           justify-content: center;
   border-radius: 50%;
   color: var(--color-solid-other);
-  -webkit-transition: color 250ms var(--timing-effect), background-color 250ms var(--timing-effect);
-  transition: color 250ms var(--timing-effect), background-color 250ms var(--timing-effect);
+  -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .soc-list__icon {

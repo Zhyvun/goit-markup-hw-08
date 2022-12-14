@@ -13,7 +13,7 @@
   justify-content: center;
   border-radius: 50%;
   color: var(--color-solid-other);
-  transition: color 250ms var(--timing-effect), background-color 250ms var(--timing-effect);
+  transition: color $timing-function $cubic-hover, background-color $timing-function $cubic-hover;
 }
 
 .soc-list__icon {

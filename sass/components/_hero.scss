@@ -54,8 +54,8 @@
     margin-right: auto;
     margin-left: auto;
     padding: 10px 32px;
-    transition: color 250ms var(--timing-effect), background-color 250ms var(--timing-effect),
-      box-shadow 250ms var(--timing-effect);
+    transition: color $timing-function $cubic-hover, background-color $timing-function $cubic-hover,
+      box-shadow $timing-function $cubic-hover;
 
     @media screen and (min-width: 1200px) {
       min-width: 216px;
