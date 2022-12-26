@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 796px;
+  height: 100%;
   padding-left: 40px;
 
   background-color: var(--color-bacground-basic);
@@ -20,13 +20,6 @@
     transform: translateY(0);
   }
 
-  .mobile-container__wrap {
-    padding: 48px 40px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-
   & .menu-button {
     position: absolute;
     top: 10px;
@@ -37,8 +30,10 @@
 .mobile-container__wrap {
   padding: 48px 40px;
   width: 100%;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
+
 .mobile-menu__row {
   display: flex;
   justify-content: flex-start;
@@ -84,6 +79,22 @@
     margin-bottom: 32px;
   }
 
+  &__link {
+    @include link;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+    color: var(--color-brand);
+
+    transition: color $timing-function $cubic-hover;
+
+    &:hover,
+    &:focus {
+      color: var(--color-current);
+    }
+  }
+
   &__contact {
     @include list;
     margin-bottom: 64px;
@@ -100,21 +111,7 @@
   }
 
   &__social > span {
-    color: var(--color-solid-other);
-  }
-}
-
-.mobile-menu__link {
-  @include link;
-  font-weight: 500;
-  font-size: 40px;
-  line-height: 1.17;
-  letter-spacing: 0.02em;
-  transition: color $timing-function $cubic-hover;
-
-  &:hover,
-  &:focus {
-    color: var(--color-current);
+    color: var(--color-basic);
   }
 }
 

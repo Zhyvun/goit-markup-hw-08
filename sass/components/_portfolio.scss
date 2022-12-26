@@ -78,11 +78,16 @@
   &__thumb {
     position: relative;
     overflow: hidden;
+    flex-grow: 1;
   }
 
   &__link {
     text-decoration: none;
-    display: block;
+    // display: block;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
     transition: box-shadow $timing-function $cubic-hover;
 
     &:hover,
